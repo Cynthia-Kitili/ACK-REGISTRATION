@@ -2,8 +2,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  
+  background-image: url('https://images.pexels.com/photos/2014775/pexels-photo-2014775.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
 }
+
 #main-navbar {
   color: white;
   min-height: 14vh;
@@ -89,7 +90,7 @@
 body {
   margin: 0;
   color: #6a6f8c;
-  background-image: url('images/bg.png');
+  background-image: url('images/bg1.png');
   font: 600 16px/18px 'Open Sans', sans-serif;
 }
 *, :after, :before {
@@ -277,7 +278,7 @@ a, [type="submit"] {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  background: url(http://ultraimg.com/images/spectre-login.jpg);
+  background: url('http://ultraimg.com/images/spectre-login.jpg');
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;

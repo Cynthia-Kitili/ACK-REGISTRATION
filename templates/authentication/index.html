@@ -5,12 +5,51 @@
     <div class="container">
             <div class="row g-0">
                 <div class="col-sm-6 col-md-8" id="header-text">
-                  <h1 id="header-h1">Multi-regulated <br> global broker. </h1>
-                  <p id="header-paragraph">A trusted destination for traders worldwide, <br> Authorised by FCA, ASIC & FSCA</p>
-                  <a class="btn" style="color: white; background-color: #fd5e14;"type="submit" id="body-link-row">Discover More</a>
+                  <h1 id="header-h1">Welcome to ACK St.MATHEW'S JUJA </h1>
+                  <p id="header-paragraph">Juja, along Thika Super Highway. Behind Rubis Petrol Station Juja, Central Province, Kenya 01001 <br> A place of worship, fellowship, evangelism, growth and service.</p>
+                  <p style="font-style: italic;color:black ;"id="header-paragraph">Create an Account so that you can stay updated and get some awesome quotes. <br> <br> <strong style="font-size: larger;">Once Logged in check your profile to pay for church membership.</strong> </p>
+                  <a class="btn" style="color: white; background-color: #fd5e14;"type="submit" href="https://www.facebook.com/stmatthewsjuja/" id="body-link-row">Discover More</a>
                 </div>
 
                 <div class="col-6 col-md-4" id="header-image"><img src="images/in-liquid-slide-2.svg " alt=""></div>
               </div>
+              <hr>
     </div>
+<div class="container" style="color: white; text-align: center;font-style: oblique;">
+  <h3>Below Is A List Of The Church Leaders <br> For You To Contact In Case Of Any Questions:</h3>
+</div>
+<div class="container" style="color:white; font-style: italic;">
+  <table class="table table-striped table-bordered table-sm" style="color:white;">
+      <thead class="thead-dark"style="color:white;">
+      <tr>
+          <th>Leader ID</th>
+          <th>Leader Name</th>
+          <th>Leader Email</th>
+          <th>Leader Contact</th>
+          <th>Leader Description</th>
+          <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody style="color:white;">
+      {% for leader in leader %}
+        <tr>
+          <td>{{ leader.id }}</td>
+          <td>{{ leader.name }}</td>
+          <td>{{ leader.email }}</td>
+          <td>{{ leader.phone }}</td>
+          <td>{{ leader.description }}</td>
+          <td>
+              <a style="color: white; background-color: #fd5e14;"href="/edit/{{ leader.id }}"class="btn"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+              <a style="color: white; background-color: #fd5e14;" class="btn"href="/delete/{{ leader.id }}">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+  </table>
+    <br>
+    <br>
+    <center>
+        <a href="/leader"style="color: white; background-color: #fd5e14;" class="btn btn-primary">Add New Record</a>
+    </center>
+</div>    
 {% endblock content %}
