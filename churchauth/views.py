@@ -51,6 +51,7 @@ def update(request, id):
         return redirect("/home")
     return render(request, 'authentication/edit.html', {'leader': leader})
 
+
 def destroy(request,id):
     leader= LeadersModel.objects.get(id=id)
     leader.delete()
