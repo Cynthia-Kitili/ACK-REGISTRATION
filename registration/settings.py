@@ -27,7 +27,15 @@ application = DjangoWhiteNoise(get_wsgi_application())
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-3x3=8)kcxoy_!ur$&nt1opk78&y=e!o_8xh!qieolbc3@io7qc'
+from decouple import config  # Place this line preferably at the top
+
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
